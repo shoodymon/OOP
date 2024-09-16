@@ -22,9 +22,9 @@ public:
     }
 
     void setTime(int h, int m, int s);
-    int getHours();
-    int getMinutes();
-    int getSeconds();
+    int getHours() const&;
+    int getMinutes() const&;
+    int getSeconds() const&; // не изменяет объект, на который указывает скрытый указатель this
     void printFormat1();
     void printFormat2();
 };

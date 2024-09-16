@@ -13,15 +13,15 @@ void Time::setTime(int h, int m, int s) {
     validateTime();
 }
 
-int Time::getHours() {
+int Time::getHours() const& {
     return m_hours;
 }
 
-int Time::getMinutes() {
+int Time::getMinutes() const& {
     return m_minutes;
 }
 
-int Time::getSeconds() {
+int Time::getSeconds() const& {
     return m_seconds;
 }
 
