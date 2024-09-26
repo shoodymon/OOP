@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 
@@ -13,7 +13,7 @@ private:
 public:
     MyClass1(int v);
 
-    // Делаем функцию дружественной классу MyClass1
+    // Р”РµР»Р°РµРј С„СѓРЅРєС†РёСЋ РґСЂСѓР¶РµСЃС‚РІРµРЅРЅРѕР№ РєР»Р°СЃСЃСѓ MyClass1
 	friend void incrementFriend(MyClass1& obj);
     void display() const;
 };
@@ -28,6 +28,21 @@ public:
     MyClass2(int v);
 
     MyClass2& operator++();
+    MyClass2 operator++(int);
+
+    int getValue() const;
+    void display() const;
+};
+
+class MyClass3 {
+private:
+    int m_value;
+
+public:
+    MyClass3(int v);
+
+    MyClass3& operator++();
+    MyClass3 operator++(int);
 
     int getValue() const;
     void display() const;
