@@ -34,21 +34,34 @@ public:
 
 class Car : public Vehicle {
 public:
-	Car() : Vehicle(80, 5, 0.5) {}
-	Car(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+	// Car() : Vehicle(80, 5, 0.5) {}
+	// Вызов Car с аргументами --> Вызов Vehicle, куда передаем значения из Car
+	// (0,0,0) при инициализации с пустыми (): Vehicle()
+	Car(double speed = 1, double capacity = 1, double cost = 1) : Vehicle(speed, capacity, cost) {}
+	// Ввод пользователем
+	//Car(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+
+	// override для явного указания переопределения в дочернем классе (маркер переопределения функции)
+	// virtual в дочернем может не указываться, хотя будет виртуальным
+	/*double calculateCargoTime(double distance, double cargoWeight) override {
+		double coefExtraTime = cargoWeight / 80;
+		return distance / m_speed + coefExtraTime;
+	}*/
 };
 
 class Bicycle : public Vehicle {
 public:
-	Bicycle() : Vehicle(15, 1, 0.1) {}
-	Bicycle(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+	//Bicycle() : Vehicle(15, 1, 0.1) {}
+	//// Ввод не 3 аргументов --> ошибка компилятора (нет значений по умолчанию)
+	//Bicycle(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+	Bicycle(double speed = 1, double capacity = 1, double cost = 1) : Vehicle(speed, capacity, cost) {}
 
-	double calculateCargoTime(double distance, double cargoWeight) {
+	virtual double calculateCargoTime(double distance, double cargoWeight) {
 		double coefExtraTime = cargoWeight / 20;
 		return distance / m_speed + coefExtraTime;
 	}
 
-	double calculateCargoCost(double distance, double cargoWeight) {
+	virtual double calculateCargoCost(double distance, double cargoWeight) {
 		double coefExtraCost = cargoWeight * 0.05;
 		return distance * m_cost_km + coefExtraCost;
 	}
@@ -56,15 +69,16 @@ public:
 
 class Wagon : public Vehicle {
 public:
-	Wagon() : Vehicle(10, 2, 0.2) {}
-	Wagon(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+	//Wagon() : Vehicle(10, 2, 0.2) {}
+	//Wagon(double speed, double capacity, double cost_km) : Vehicle(speed, capacity, cost_km) {}
+	Wagon(double speed = 1, double capacity = 1, double cost = 1) : Vehicle(speed, capacity, cost) {}
 
-	double calculateCargoTime(double distance, double cargoWeight) {
+	virtual double calculateCargoTime(double distance, double cargoWeight) {
 		double coefExtraTime = cargoWeight / 50;
 		return distance / m_speed + coefExtraTime;
 	}
 
-	double calculateCargoCost(double distance, double cargoWeight) {
+	virtual double calculateCargoCost(double distance, double cargoWeight) {
 		double coefExtraCost = cargoWeight * 0.1;
 		return distance * m_cost_km + coefExtraCost;
 	}

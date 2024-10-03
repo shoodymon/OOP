@@ -5,9 +5,9 @@ int main() {
 	setlocale(0, "");
 	system("cls");
 
-	Car objCar;
-	Bicycle objBicycle;
-	Wagon objWagon;
+	Car objCar(80, 5, 0.5);
+	Bicycle objBicycle(15, 1, 0.1);
+	Wagon objWagon(10, 2, 0.2);
 
 	double distance = 500;
 	double cargoWeight = 100;
