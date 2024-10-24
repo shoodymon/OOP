@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 template <typename T>
@@ -26,7 +26,7 @@ public:
     ListElement<T>* removeFromStart() {
         if (m_next) {
             ListElement<T>* newHead = m_next;
-            m_next = nullptr;  // Отсоединяем текущий элемент
+            m_next = nullptr;  // РћС‚СЃРѕРµРґРёРЅСЏРµРј С‚РµРєСѓС‰РёР№ СЌР»РµРјРµРЅС‚
             delete this;
             return newHead;
         }

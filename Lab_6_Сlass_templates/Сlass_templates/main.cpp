@@ -1,4 +1,4 @@
-#include "class.hpp"
+ï»¿#include "class.hpp"
 
 int main() {
     setlocale(0, "");
@@ -12,29 +12,29 @@ int main() {
     ListElement<int>* list2 = new ListElement<int>(10);
     list2 = list2->addToStart(7);
 
-    std::cout << "\n\tÑïèñîê 1: " << list1 << std::endl;
-    std::cout << "\tÑïèñîê 2: " << list2 << std::endl;
-    std::cout << "\tÊîëè÷åñòâî ýëåìåíòîâ: " << ListElement<int>::getCount() << std::endl;
+    std::cout << "\n\tÐ¡Ð¿Ð¸ÑÐ¾Ðº 1: " << list1 << std::endl;
+    std::cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº 2: " << list2 << std::endl;
+    std::cout << "\tÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: " << ListElement<int>::getCount() << std::endl;
 
-    std::cout << "\n\tÐàçìåðû ñïèñêîâ ðàâíû? " << (*list1 == *list2) << std::endl;
+    std::cout << "\n\tÐ Ð°Ð·Ð¼ÐµÑ€Ñ‹ ÑÐ¿Ð¸ÑÐºÐ¾Ð² Ñ€Ð°Ð²Ð½Ñ‹? " << (*list1 == *list2) << std::endl;
 
     list1 = list1->removeFromStart();
-    std::cout << "\n\tÑïèñîê 1: " << list1 << std::endl;
+    std::cout << "\n\tÐ¡Ð¿Ð¸ÑÐ¾Ðº 1: " << list1 << std::endl;
     list2 = list2->removeFromStart();
-    std::cout << "\tÑïèñîê 2: " << list2 << std::endl;
-    std::cout << "\tÊîëè÷åñòâî ýëåìåíòîâ: " << ListElement<int>::getCount() << std::endl;
+    std::cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº 2: " << list2 << std::endl;
+    std::cout << "\tÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: " << ListElement<int>::getCount() << std::endl;
 
     ListElement<int>* found = list1->find(5);
     if (found) {
-        std::cout << "\n\tÝëåìåíò 5 íàéäåí" << std::endl;
+        std::cout << "\n\tÐ­Ð»ÐµÐ¼ÐµÐ½Ñ‚ 5 Ð½Ð°Ð¹Ð´ÐµÐ½" << std::endl;
     }
     else {
-        std::cout << "\tÝëåìåíò 5 íå íàéäåí" << std::endl;
+        std::cout << "\tÐ­Ð»ÐµÐ¼ÐµÐ½Ñ‚ 5 Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½" << std::endl;
     }
 
     ListElement<int>::deleteList(list1);
     ListElement<int>::deleteList(list2);
-    std::cout << "\n\tÊîëè÷åñòâî ýëåìåíòîâ ïîñëå óäàëåíèÿ: " << ListElement<int>::getCount() << std::endl;
+    std::cout << "\n\tÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¿Ð¾ÑÐ»Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: " << ListElement<int>::getCount() << std::endl;
 
     return 0;
 }
