@@ -1,0 +1,6 @@
+Spartak Ivanov 3 2 6
+Spartak Petrov 2 4 8
+Spartak Sidorov 4 3 4
+Dinamo Katkov 5 3 7
+Dinamo Livnev 5 7 3
+Dinamo Gorin 4 8 10
